@@ -13,5 +13,9 @@ RUN curl -O https://bootstrap.pypa.io/get-pip.py
 RUN python get-pip.py
 RUN pip install awscli
 
+# Configure .ssh to skip validate the remote host key
+RUN mkdir -p ~/.ssh
+RUN echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+
 ENTRYPOINT ["wrapdocker"]
 CMD []
