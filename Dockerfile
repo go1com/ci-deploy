@@ -9,6 +9,7 @@ RUN mv composer.phar /usr/local/bin/composer
 # Enable mailparse + mongo
 RUN echo 'extension=mongo.so' > /etc/php5/cli/conf.d/10-mongo.ini
 RUN echo 'extension=mailparse.so' > /etc/php5/cli/conf.d/10-mailparse.ini
+RUN php5enmod mcrypt
 
 # Install python + aws
 RUN curl -O https://bootstrap.pypa.io/get-pip.py
