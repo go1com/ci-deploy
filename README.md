@@ -20,5 +20,8 @@ Installed version: 5.5.9-ubuntu, modules:
 ## Python
 Installed version: 2.7, latest pip version
 
-## Amazon Client
-Latest aws client
+## Amazon Client + JQ
+Latest aws client + jq command to process json in bash
+
+## Node.JS
+Installed version: Latest stable version (5.x)
