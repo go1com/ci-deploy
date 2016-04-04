@@ -23,6 +23,7 @@ RUN gem install --no-rdoc --no-ri sass
 
 # Install nodejs + tools
 RUN curl -sL https://deb.nodesource.com/setup_5.x | bash -
+RUN apt-get install nodejs -y -qq && apt-get clean && rm -rf /var/lib/apt/lists/*
 RUN bash -c 'npm install -g bower grunt-cli jira-cmd phantomjs-prebuilt utf-8-validate bufferutil optipng jpegtran pngquant gifsicle bufferutil jshint ycssmin recess'
 
 # Configure .ssh to skip validate the remote host key
