@@ -1,7 +1,7 @@
 FROM gitlab/dind
 
 # Add nodejs repos + Install PHP CLI + Node.JS + Ruby + tools
-RUN curl -sL https://deb.nodesource.com/setup_5.x | bash - && apt-get install -y language-pack-en-base && LC_ALL=en_US.UTF-8 add-apt-repository ppa:ondrej/php5-5.6 && apt-get upgrade -y && apt-get install php5-cli php5-dev php5-curl php5-gd php5-mcrypt php5-mysql php5-sqlite build-essential libmcrypt-dev libicu-dev libxml2-dev libssl-dev curl git-core unzip python2.7 jq g++ python-software-properties libfontconfig ruby-dev nodejs -y -qq && apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN apt-get install -y language-pack-en-base python-software-properties && LC_ALL=en_US.UTF-8 add-apt-repository ppa:ondrej/php5-5.6 && curl -sL https://deb.nodesource.com/setup_5.x | bash - && apt-get upgrade -y && apt-get install php5-cli php5-dev php5-curl php5-gd php5-mcrypt php5-mysql php5-sqlite build-essential libmcrypt-dev libicu-dev libxml2-dev libssl-dev curl git-core unzip python2.7 jq g++ python-software-properties libfontconfig ruby-dev nodejs -y -qq && apt-get clean && rm -rf /var/lib/apt/lists/*
 RUN pecl install mongo
 RUN pecl download mailparse-2.1.6 && tar -zxf mailparse-2.1.6.tgz && cd mailparse-2.1.6 && sed -i '/#if !HAVE_MBSTRING/c#if !HAVE_MBSTRING && false' mailparse.c && phpize && ./configure && make && make install
 RUN curl -sS https://getcomposer.org/installer | php
