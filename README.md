@@ -6,7 +6,7 @@ This CI image have docker inside, so its can run [Docker inside Docker](https://
 This is very helpful for PHP project need to run script before deploy task, run the docker build and push the image build to service like Docker Hub, Amazon ECS
 
 ## PHP
-Installed version: 5.5.9-ubuntu, modules:
+Installed version: 5.6, modules:
 
 - curl
 - gd
