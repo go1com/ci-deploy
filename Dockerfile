@@ -11,6 +11,13 @@ RUN echo 'extension=mongo.so' > /etc/php5/cli/conf.d/10-mongo.ini
 RUN echo 'extension=mailparse.so' > /etc/php5/cli/conf.d/10-mailparse.ini
 RUN php5enmod mcrypt mysql sqlite
 
+# Install tools (phpunit, phing)
+RUN composer global require phpunit/phpunit:*
+RUN composer global require phing/phing:*
+
+RUN ln -s ~/.composer/vendor/bin/phpunit /usr/local/bin/phpunit
+RUN ln -s ~/.composer/vendor/bin/phing /usr/local/bin/phing
+
 # Install python + aws
 RUN curl -O https://bootstrap.pypa.io/get-pip.py
 RUN python get-pip.py
