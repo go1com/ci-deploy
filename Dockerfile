@@ -21,7 +21,7 @@ RUN ln -s ~/.composer/vendor/bin/phing /usr/local/bin/phing
 # Install python + aws
 RUN curl -O https://bootstrap.pypa.io/get-pip.py
 RUN python get-pip.py
-RUN pip install awscli
+RUN pip install awscli s3cmd
 
 # Install compass + sass
 RUN gem install --no-rdoc --no-ri compass
