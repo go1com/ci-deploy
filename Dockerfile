@@ -21,6 +21,7 @@ RUN curl -sS https://getcomposer.org/installer | php \
     && python get-pip.py \
     && pip install awscli s3cmd \
     && curl -o /usr/local/bin/ecs-cli https://s3.amazonaws.com/amazon-ecs-cli/ecs-cli-linux-amd64-latest \
+    && chmod +x /usr/local/bin/ecs-cli \
     && gem install --no-rdoc --no-ri compass foundation sass
 
 # install nodejs + tools + configure .ssh to skip validate the remote host key
