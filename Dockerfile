@@ -19,7 +19,7 @@ RUN curl -sS https://getcomposer.org/installer | php \
     && ln -s ~/.composer/vendor/bin/phing /usr/local/bin/phing \
     && curl -O https://bootstrap.pypa.io/get-pip.py \
     && python get-pip.py \
-    && pip install awscli s3cmd \
+    && pip install awscli s3cmd docker-cloud \
     && curl -o /usr/local/bin/ecs-cli https://s3.amazonaws.com/amazon-ecs-cli/ecs-cli-linux-amd64-latest \
     && chmod +x /usr/local/bin/ecs-cli \
     && gem install --no-rdoc --no-ri compass foundation sass
