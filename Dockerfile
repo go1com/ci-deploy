@@ -26,7 +26,7 @@ RUN curl -sS https://getcomposer.org/installer | php \
 
 # install nodejs + tools + configure .ssh to skip validate the remote host key
 RUN bash -c 'npm set progress=false' \
-    && bash -c 'npm install -g bower grunt-cli jira-cmd phantomjs-prebuilt utf-8-validate bufferutil optipng jpegtran pngquant gifsicle bufferutil jshint ycssmin recess selenium-standalone webdriver-manager' \
+    && bash -c 'npm install -g yarn bower grunt-cli jira-cmd phantomjs-prebuilt utf-8-validate bufferutil optipng jpegtran pngquant gifsicle bufferutil jshint ycssmin recess selenium-standalone webdriver-manager' \
     && selenium-standalone install --silent \
     && webdriver-manager update \
     && mkdir -p ~/.ssh \
