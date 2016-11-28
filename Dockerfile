@@ -1,4 +1,10 @@
-FROM gitlab/dind
+FROM jpetazzo/dind
+
+RUN curl -s -L https://github.com/docker/compose/releases/latest | \
+        egrep -o '/docker/compose/releases/download/[0-9.]*/docker-compose-Linux-x86_64' | \
+        wget --base=http://github.com/ -i - -O /usr/local/bin/docker-compose && \
+        chmod +x /usr/local/bin/docker-compose && \
+        /usr/local/bin/docker-compose --version
 
 # Add nodejs repos + Install PHP CLI + Node.JS + Ruby + tools
 RUN apt-get update \
