@@ -1,5 +1,4 @@
-FROM docker
-
+FROM jpetazzo/dind
 
 RUN curl -s -L https://github.com/docker/compose/releases/latest | \
         egrep -o '/docker/compose/releases/download/[0-9.]*/docker-compose-Linux-x86_64' | \
