@@ -26,7 +26,7 @@ RUN apt-get update -qq && apt-get install -qqy \
     && apt-get install -qqy language-pack-en-base software-properties-common \
     && curl -sL https://deb.nodesource.com/setup_6.x | bash - \
     && apt-get update -qq  \
-    && apt-get install -qqyphp php-mbstring php-soap php-curl php-mongodb php-gd php-mcrypt php-bcmath php-mysql php-sqlite3 php-xml libmcrypt-dev libicu-dev libxml2-dev libssl-dev curl git-core unzip python2.7 jq g++ python-software-properties libfontconfig build-essential ruby-dev nodejs \
+    && apt-get install -qqy php php-mbstring php-soap php-curl php-mongodb php-gd php-mcrypt php-bcmath php-mysql php-sqlite3 php-xml libmcrypt-dev libicu-dev libxml2-dev libssl-dev curl git-core unzip python2.7 jq g++ python-software-properties libfontconfig build-essential ruby-dev nodejs \
     && apt-get clean -qqy \
     && rm -rf /var/lib/apt/lists/* \
     && curl -sS https://getcomposer.org/installer | php \
