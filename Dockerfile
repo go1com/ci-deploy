@@ -42,7 +42,7 @@ RUN apt-get update -qq && apt-get install -qqy \
     && chmod +x /usr/local/bin/ecs-cli \
     && gem install --no-rdoc --no-ri compass foundation sass \
     && bash -c 'npm set progress=false' \
-    && bash -c 'npm install -g yarn bower grunt-cli jira-cmd phantomjs-prebuilt utf-8-validate bufferutil optipng jpegtran pngquant gifsicle bufferutil jshint ycssmin recess selenium-standalone webdriver-manager imagemin imagemin-gifsicle imagemin-jpegtran imagemin-optipng imagemin-pngquant' \
+    && bash -c 'npm install -g yarn bower grunt-cli jira-cmd phantomjs-prebuilt utf-8-validate bufferutil optipng jpegtran pngquant gifsicle bufferutil jshint ycssmin recess selenium-standalone webdriver-manager imagemin imagemin-gifsicle imagemin-jpegtran imagemin-optipng imagemin-pngquant newman' \
     && selenium-standalone install --silent \
     && webdriver-manager update \
     && mkdir -p ~/.ssh \
