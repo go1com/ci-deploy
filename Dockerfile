@@ -18,6 +18,7 @@ RUN apt-get update -qq && apt-get install -yqq \
         wget --base=http://github.com/ -i - -O /usr/local/bin/docker-compose \
     && chmod +x /usr/local/bin/docker-compose \
     && /usr/local/bin/docker-compose --version \
+    && curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl \
     && curl -sL https://deb.nodesource.com/setup_6.x | bash - \
     && apt-get update -qq  \
     && apt-get install -qqy php php-mbstring php-soap php-curl php-mongodb php-gd php-mcrypt php-bcmath php-mysql php-sqlite3 php-xml libmcrypt-dev libicu-dev libxml2-dev libssl-dev curl git-core unzip python2.7 jq g++ python-software-properties libfontconfig build-essential ruby-dev nodejs gettext default-jre \
