@@ -37,7 +37,7 @@ RUN apt-get update -qq && apt-get install -yqq \
     && curl -o /usr/local/bin/ecs-cli https://s3.amazonaws.com/amazon-ecs-cli/ecs-cli-linux-amd64-latest \
     && chmod +x /usr/local/bin/ecs-cli \
     && gem install --no-rdoc --no-ri compass foundation sass \
-    && bash -c 'npm set progress=false' \
+    && bash -c 'npm config set -g progress false' \
     && bash -c 'npm install -g bower yarn @angular/cli grunt-cli gulp-cli jira-cmd phantomjs-prebuilt utf-8-validate bufferutil optipng jpegtran pngquant gifsicle bufferutil jshint ycssmin recess selenium-standalone webdriver-manager imagemin imagemin-gifsicle imagemin-jpegtran imagemin-optipng imagemin-pngquant optipng-bin jpegtran-bin newman nightmare mocha serverless serverless-webpack webpack node-sass typescript' \
     && selenium-standalone install --silent \
     && webdriver-manager update \
