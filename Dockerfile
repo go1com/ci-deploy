@@ -38,7 +38,7 @@ RUN apt-get update -qq && apt-get install -yqq \
     && chmod +x /usr/local/bin/ecs-cli \
     && gem install --no-rdoc --no-ri compass foundation sass \
     && bash -c 'npm config set -g progress false' \
-    && bash -c 'npm install -g bower yarn @angular/cli grunt-cli gulp-cli jira-cmd phantomjs-prebuilt utf-8-validate bufferutil optipng jpegtran pngquant gifsicle bufferutil jshint ycssmin recess selenium-standalone webdriver-manager imagemin imagemin-gifsicle imagemin-jpegtran imagemin-optipng imagemin-pngquant optipng-bin jpegtran-bin newman nightmare mocha serverless serverless-webpack webpack node-sass typescript' \
+    && bash -c 'npm install -g bower yarn @angular/cli grunt-cli gulp-cli jira-cmd phantomjs-prebuilt utf-8-validate bufferutil optipng jpegtran pngquant gifsicle bufferutil jshint ycssmin recess selenium-standalone webdriver-manager imagemin imagemin-gifsicle imagemin-jpegtran imagemin-optipng imagemin-pngquant optipng-bin jpegtran-bin newman nightmare mocha serverless serverless-webpack webpack node-sass typescript uglify-js' \
     && bash -c 'yarn global add npm --silent' \
     && selenium-standalone install --silent \
     && webdriver-manager update \
