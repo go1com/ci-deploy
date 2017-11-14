@@ -15,4 +15,4 @@ Installed version: 2.7, latest pip version
 Latest aws client + jq command to process json in bash
 
 ## Node.JS
-Installed version: Latest stable version (5.x)
+Installed version: Latest stable version (5.x).
