@@ -1,11 +1,10 @@
-FROM node:alpine
+FROM docker:git
 
 RUN \
     mkdir -p /aws && \
-    apk -Uuv add curl docker git groff less python py-pip && \
+    apk -Uuv add bash curl groff less python py-pip && \
     pip install awscli && \
     curl -o /usr/bin/ecs-cli https://s3.amazonaws.com/amazon-ecs-cli/ecs-cli-linux-amd64-latest && \
     chmod a+x /usr/bin/ecs-cli && \
-    npm install -g semantic-release-gitlab && \
     apk --purge -v del py-pip && \
     rm /var/cache/apk/*
