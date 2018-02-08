@@ -13,7 +13,6 @@ RUN apt-get update -qq && apt-get install -yqq \
     && LC_ALL=en_US.UTF-8 add-apt-repository ppa:ondrej/php \
     && apt-get update \
     && apt-get install docker-ce -yqq \
-    && docker -v \
     && curl -s -L https://github.com/docker/compose/releases/latest | \
         egrep -o '/docker/compose/releases/download/[0-9.]*/docker-compose-Linux-x86_64' | \
         wget --base=http://github.com/ -i - -O /usr/local/bin/docker-compose \
@@ -29,19 +28,17 @@ RUN apt-get update -qq && apt-get install -yqq \
     && curl -sS https://getcomposer.org/installer | php \
     && mv composer.phar /usr/local/bin/composer \
     && composer global require phpunit/phpunit:* \
-    && composer global require phing/phing:* \
+    && composer global require go1/deploy-helper:* \
     && ln -s ~/.composer/vendor/bin/phpunit /usr/local/bin/phpunit \
-    && ln -s ~/.composer/vendor/bin/phing /usr/local/bin/phing \
+    && ln -s ~/.composer/vendor/bin/deploy-helper /usr/local/bin/deploy-helper \
     && curl -O https://bootstrap.pypa.io/get-pip.py \
     && python get-pip.py \
-    && pip install awscli s3cmd docker-cloud \
+    && pip install awscli s3cmd \
     && curl -o /usr/local/bin/ecs-cli https://s3.amazonaws.com/amazon-ecs-cli/ecs-cli-linux-amd64-v0.6.6 \
     && chmod +x /usr/local/bin/ecs-cli \
     && gem install --no-rdoc --no-ri compass foundation sass \
     && bash -c 'npm config set -g progress false' \
-    && bash -c 'npm install -g bower yarn @angular/cli grunt-cli gulp-cli jira-cmd phantomjs-prebuilt utf-8-validate bufferutil optipng jpegtran pngquant gifsicle bufferutil jshint ycssmin recess selenium-standalone webdriver-manager imagemin imagemin-gifsicle imagemin-jpegtran imagemin-optipng imagemin-pngquant optipng-bin jpegtran-bin newman nightmare mocha serverless serverless-webpack webpack node-sass typescript uglify-js' \
+    && bash -c 'npm install -g bower yarn @angular/cli grunt-cli gulp-cli jira-cmd phantomjs-prebuilt utf-8-validate bufferutil optipng jpegtran pngquant gifsicle bufferutil jshint ycssmin recess imagemin imagemin-gifsicle imagemin-jpegtran imagemin-optipng imagemin-pngquant optipng-bin jpegtran-bin newman nightmare mocha serverless serverless-webpack webpack node-sass typescript uglify-js' \
     && bash -c 'yarn global add npm --silent' \
-    && selenium-standalone install --silent \
-    && webdriver-manager update \
     && mkdir -p ~/.ssh \
     && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
