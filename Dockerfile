@@ -27,18 +27,15 @@ RUN apt-get update -qq && apt-get install -yqq \
     && rm -rf /var/lib/apt/lists/* \
     && curl -sS https://getcomposer.org/installer | php \
     && mv composer.phar /usr/local/bin/composer \
-    && composer global require phpunit/phpunit:* \
     && composer global require go1/deploy-helper:* \
-    && ln -s ~/.composer/vendor/bin/phpunit /usr/local/bin/phpunit \
     && ln -s ~/.composer/vendor/bin/deploy-helper /usr/local/bin/deploy-helper \
     && curl -O https://bootstrap.pypa.io/get-pip.py \
     && python get-pip.py \
     && pip install awscli s3cmd \
     && curl -o /usr/local/bin/ecs-cli https://s3.amazonaws.com/amazon-ecs-cli/ecs-cli-linux-amd64-v0.6.6 \
     && chmod +x /usr/local/bin/ecs-cli \
-    && gem install --no-rdoc --no-ri compass foundation sass \
     && bash -c 'npm config set -g progress false' \
-    && bash -c 'npm install -g bower yarn @angular/cli grunt-cli gulp-cli jira-cmd phantomjs-prebuilt utf-8-validate bufferutil optipng jpegtran pngquant gifsicle bufferutil jshint ycssmin recess imagemin imagemin-gifsicle imagemin-jpegtran imagemin-optipng imagemin-pngquant optipng-bin jpegtran-bin newman nightmare mocha serverless serverless-webpack webpack node-sass typescript uglify-js' \
+    && bash -c 'npm install -g bower yarn @angular/cli grunt-cli gulp-cli jira-cmd utf-8-validate optipng jpegtran pngquant gifsicle bufferutil jshint ycssmin recess imagemin imagemin-gifsicle imagemin-jpegtran imagemin-optipng imagemin-pngquant optipng-bin jpegtran-bin newman nightmare mocha serverless serverless-webpack webpack typescript uglify-js' \
     && bash -c 'yarn global add npm --silent' \
     && mkdir -p ~/.ssh \
     && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
