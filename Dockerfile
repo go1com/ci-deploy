@@ -35,7 +35,7 @@ RUN apt-get update -qq && apt-get install -yqq \
     && curl -o /usr/local/bin/ecs-cli https://s3.amazonaws.com/amazon-ecs-cli/ecs-cli-linux-amd64-v0.6.6 \
     && chmod +x /usr/local/bin/ecs-cli \
     && bash -c 'npm config set -g progress false' \
-    && bash -c 'npm install -g bower yarn @angular/cli grunt-cli gulp-cli jira-cmd utf-8-validate optipng jpegtran pngquant gifsicle bufferutil jshint ycssmin recess imagemin imagemin-gifsicle imagemin-jpegtran imagemin-optipng imagemin-pngquant optipng-bin jpegtran-bin newman nightmare mocha serverless serverless-webpack webpack typescript uglify-js' \
+    && bash -c 'npm install -g bower yarn @angular/cli grunt-cli gulp-cli jira-cmd phantomjs-prebuilt utf-8-validate optipng jpegtran pngquant gifsicle bufferutil jshint ycssmin recess imagemin imagemin-gifsicle imagemin-jpegtran imagemin-optipng imagemin-pngquant optipng-bin jpegtran-bin newman nightmare mocha serverless serverless-webpack webpack typescript uglify-js' \
     && bash -c 'yarn global add npm --silent' \
     && mkdir -p ~/.ssh \
     && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
