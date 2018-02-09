@@ -2,6 +2,7 @@ FROM ubuntu:xenial
 
 RUN apt-get update -qq && apt-get install -yqq \
         apt-transport-https \
+        autoconf \
         ca-certificates \
         curl \
         language-pack-en-base \
@@ -22,7 +23,7 @@ RUN apt-get update -qq && apt-get install -yqq \
     && chmod +x kubectl && mv kubectl /usr/local/bin/kubectl \
     && curl -sL https://deb.nodesource.com/setup_6.x | bash - \
     && apt-get update -qq  \
-    && apt-get install -qqy php7.1-cli php7.1-mbstring php7.1-soap php7.1-curl php7.1-mongodb php7.1-gd php7.1-mcrypt php7.1-bcmath php7.1-mysql php7.1-sqlite3 php7.1-xml libmcrypt-dev libicu-dev libxml2-dev libssl-dev curl git-core unzip python2.7 jq g++ python-software-properties libfontconfig build-essential ruby-dev nodejs gettext default-jre default-jdk \
+    && apt-get install -qqy php7.1-cli php7.1-mbstring php7.1-soap php7.1-curl php7.1-mongodb php7.1-gd php7.1-mcrypt php7.1-bcmath php7.1-mysql php7.1-sqlite3 php7.1-xml libmcrypt-dev libicu-dev libxml2-dev libssl-dev libffi-dev curl git-core unzip python2.7 jq g++ python-software-properties libfontconfig build-essential ruby-dev nodejs gettext default-jre default-jdk \
     && apt-get clean -qqy \
     && rm -rf /var/lib/apt/lists/* \
     && curl -sS https://getcomposer.org/installer | php \
@@ -32,6 +33,7 @@ RUN apt-get update -qq && apt-get install -yqq \
     && curl -O https://bootstrap.pypa.io/get-pip.py \
     && python get-pip.py \
     && pip install awscli s3cmd \
+    && gem install --no-rdoc --no-ri compass foundation sass \
     && curl -o /usr/local/bin/ecs-cli https://s3.amazonaws.com/amazon-ecs-cli/ecs-cli-linux-amd64-v0.6.6 \
     && chmod +x /usr/local/bin/ecs-cli \
     && bash -c 'npm config set -g progress false' \
