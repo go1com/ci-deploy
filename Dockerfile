@@ -21,7 +21,7 @@ RUN apt-get update -qq && apt-get install -yqq \
     && /usr/local/bin/docker-compose --version \
     && curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl \
     && chmod +x kubectl && mv kubectl /usr/local/bin/kubectl \
-    && curl -sL https://deb.nodesource.com/setup_6.x | bash - \
+    && curl -sL https://deb.nodesource.com/setup_8.x | bash - \
     && apt-get update -qq  \
     && apt-get install -qqy php7.1-cli php7.1-mbstring php7.1-soap php7.1-curl php7.1-mongodb php7.1-gd php7.1-mcrypt php7.1-bcmath php7.1-mysql php7.1-sqlite3 php7.1-xml libmcrypt-dev libicu-dev libxml2-dev libssl-dev libffi-dev curl git-core unzip python2.7 jq g++ python-software-properties libfontconfig build-essential ruby-dev nodejs gettext default-jre default-jdk \
     && apt-get clean -qqy \
